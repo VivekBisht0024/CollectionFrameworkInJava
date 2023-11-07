@@ -1,64 +1,42 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class LearnArrayList {
     public static void main(String[] args) {
-        // size increases and decreases automatically
+        // Java collection framework
+        ArrayList<Integer> list = new ArrayList<>();
+        // ArrayList<String> list2 = new ArrayList<>();
+        // ArrayList<Boolean> list3 = new ArrayList<>();
 
-        // ArrayList<String> studentsName = new ArrayList<>();
-        // studentsName.add("Vivek");
-
-        ArrayList<Integer> list = new ArrayList();
         list.add(1);
         list.add(2);
         list.add(3);
         list.add(4);
+        list.add(4,900);
+        System.out.println(list);
+        // to get element - O(1)
+        int element = list.get(2);
+        System.out.println(element);
+
+        //Delete - O(N)
+        list.remove(1);
         System.out.println(list);
 
-        ArrayList<Integer> list2 = new ArrayList();
-        list2.add(5);
-        list2.add(6);
+        // set element at index 
 
-        list.addAll(list2);
+        list.set(1,100);
         System.out.println(list);
 
-        // to get the element
+        //contains
 
-        System.out.println(list.get(1));
+        System.out.println(list.contains(100));
 
-        list.remove(3);
-        System.out.println(list);
+        //size 
 
-        // to remove an element
+        System.out.println(list.size());
 
-        list.remove(Integer.valueOf(2));
-        System.out.println(list);
-
-        // to remove all elements in the list
-
-        // list.clear();
-        // System.out.println(list);
-
-        list.set(1, 40);
-        System.out.println(list);
-
-        System.out.println(list.contains(40));
-
-        // iterating througout the list
-
-        // for(int i = 0 ; i > list.size() ; i++){
-        // System.out.println(list.get(i));
-        // }
-
-        for (Integer element : list) {
-            System.out.println(element);
+        for(int i = 0 ; i < list.size() ; i++){
+            System.out.println(list.get(i) + " ");
         }
-
-        // iterator
-        Iterator<Integer> it = list.iterator();
-        while (it.hasNext()) {
-            System.out.println("Iterator" + it.next());
-        }
-
+        System.out.println();
     }
 }
